@@ -4,7 +4,7 @@ WORKDIR /app
 USER root
 RUN gradle wrapper
 RUN ./gradlew clean shadowJar && \
-  mv build/libs/Spez-0.1.0-SNAPSHOT.jar spez-poller.jar
+  mv build/libs/Spez-1.0.0-SNAPSHOT.jar spez-poller.jar
 
 FROM gcr.io/distroless/java
 COPY --from=build-env /app/spez-poller.jar /app/spez-poller.jar
