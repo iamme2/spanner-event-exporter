@@ -3,7 +3,7 @@ ADD . /app
 WORKDIR /app
 USER root
 RUN gradle wrapper
-RUN ./gradlew clean shadowJar && \
+RUN ./gradlew clean jar && \
   mv build/libs/Spez-1.0.0-SNAPSHOT.jar spez-poller.jar
 
 FROM gcr.io/distroless/java
